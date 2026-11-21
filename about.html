@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About us – Fire-Detection Robot Car</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,500..800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><i aria-hidden="true"></i>FireBot ESP32</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" aria-current="page">About us</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+      </ul>
+    </nav>
+    <button class="theme" id="theme" type="button" aria-label="Switch light or dark theme">Theme</button>
+  </div>
+</header>
+<main>
+<section class="page-title">
+  <div class="wrap">
+    <h1>About the project</h1>
+    <p class="lead">Fires move fast and are dangerous to approach. This project puts a small, low-cost robot between people and the flames.</p>
+  </div>
+</section>
+
+<section style="padding-top:1rem">
+  <div class="wrap two">
+    <div>
+      <h2>Our goal</h2>
+      <p>We are building a low-cost educational prototype of a mobile firefighting robot. It combines robotics, embedded programming, wireless communication, sensors and IoT monitoring.</p>
+      <p>Checking a possible fire by hand exposes people to heat and smoke, and small robot cars rarely combine flame detection, obstacle response, alarms and remote status. This prototype puts all of these in one system and keeps the operator farther from the test area.</p>
+      <h3 style="margin-top:1.6rem">Project areas</h3>
+      <ul class="chips"><li>Internet of Things</li><li>Embedded systems</li><li>Robotics</li><li>Fire safety</li></ul>
+    </div>
+    <dl class="facts">
+      <div><dt>Project</dt><dd>IoT Fire-Detection and Firefighting Robot Car</dd></div>
+      <div><dt>Prepared by</dt><dd>Prince Tuyishime</dd></div>
+      <div><dt>Project date</dt><dd>23 October 2026</dd></div>
+      <div><dt>Controller</dt><dd>Two ESP32 boards, ESP-NOW, Adafruit IO</dd></div>
+      <div><dt>Main functions</dt><dd>Remote control, flame detection, obstacle stop, alarms, water pump, IoT monitoring</dd></div>
+      <div><dt>Estimated budget</dt><dd>116,765 RWF (about 117,000 RWF)</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section style="padding-top:1rem">
+  <div class="wrap">
+    <h2>Objectives</h2>
+    <ol class="obj">
+      <li>Build a robot with a chassis, DC motors, wheels and motor driver.</li>
+      <li>Detect visible flames with a flame sensor.</li>
+      <li>Stop the robot for obstacles using an ultrasonic sensor.</li>
+      <li>Build a five-button handheld controller.</li>
+      <li>Link remote and robot wirelessly with ESP-NOW.</li>
+      <li>Show system conditions with red, green and yellow LEDs and a buzzer.</li>
+      <li>Switch a small water pump through a suitable driver.</li>
+      <li>Show readings and status on an Adafruit IO dashboard.</li>
+      <li>Test wireless range, flame detection, obstacle response and pump operation.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>How the system is built</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>Part</th><th>Function</th></tr></thead>
+      <tbody>
+        <tr><td>Handheld ESP32</td><td>Reads the five buttons and sends commands.</td></tr>
+        <tr><td>Robot ESP32</td><td>Coordinates movement, sensors, alerts and pump.</td></tr>
+        <tr><td>Flame sensor</td><td>Detects flame-related infrared light in its field of view.</td></tr>
+        <tr><td>Ultrasonic sensor (HC-SR04)</td><td>Measures distance and helps prevent collisions.</td></tr>
+        <tr><td>Motor driver (L298N)</td><td>Controls the direction of the DC motors.</td></tr>
+        <tr><td>Pump driver</td><td>Switches the water pump with a properly rated circuit.</td></tr>
+        <tr><td>LEDs and buzzer</td><td>Indicate normal operation, fire alerts and obstacles.</td></tr>
+        <tr><td>Adafruit IO</td><td>Shows selected readings and status when online.</td></tr>
+      </tbody>
+    </table></div>
+    <p style="margin-top:1rem">If valid commands are lost, the robot stops its motors. Obstacle-stop takes priority over movement commands.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Budget</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>Group</th><th class="n">Cost (RWF)</th></tr></thead>
+      <tbody>
+        <tr><td>Electronics and control</td><td class="n">43,350</td></tr>
+        <tr><td>Chassis and pump system</td><td class="n">29,500</td></tr>
+        <tr><td>Power and construction</td><td class="n">33,300</td></tr>
+        <tr><td>Subtotal</td><td class="n">106,150</td></tr>
+        <tr><td>Contingency (10%)</td><td class="n">10,615</td></tr>
+        <tr class="tot"><td>Total estimated budget</td><td class="n">116,765</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note" style="margin-top:1rem">Some prices are planning estimates pending supplier confirmation. Internet access and delivery are not included.</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>Expected results</h2>
+    <ul class="obj">
+      <li>Moves forward, backward, left and right, and stops, on command.</li>
+      <li>Communicates over ESP-NOW at a target of at least 10 metres in suitable conditions.</li>
+      <li>Stops when an obstacle is inside the safety distance.</li>
+      <li>Shows normal, fire and obstacle conditions with LEDs and a buzzer.</li>
+      <li>Shows flame, distance, alarm, pump and robot status on Adafruit IO when online.</li>
+    </ul>
+    <p class="note" style="margin-top:1rem">These are target outcomes, not guaranteed performance. Range, detection and battery runtime will be measured in testing.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Safety and limitations</h2>
+    <div class="warn">
+      <p><strong>This is an educational prototype, not a certified firefighting system.</strong> It must not replace trained emergency responders, and must never be used to approach a real fire.</p>
+      <ul class="obj">
+      <li>Never spray water on energized equipment, exposed wiring or electrical fires.</li>
+      <li>Never power the pump directly from an ESP32 pin. Use a rated driver with spike protection.</li>
+      <li>Use matched rechargeable cells, battery protection and a suitable charger.</li>
+      <li>Flame sensors are affected by lighting, flame direction and distance, and do not detect every fire type.</li>
+      <li>Test in small, supervised demonstrations, away from people and flammable materials.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <div>
+      <h3>IoT Fire-Detection and Firefighting Robot Car</h3>
+      <p>An ESP32-based robot for remote control, flame detection, obstacle stop, and IoT monitoring.</p>
+    </div>
+    <div>
+      <h3>Pages</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Project</h3>
+      <ul><li>Prepared by Prince Tuyishime</li><li>23 October 2026</li></ul>
+    </div>
+    <p class="copy">© 2026 Prince Tuyishime. All rights reserved.</p>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
