@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home – Fire-Detection Robot Car</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,500..800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><i aria-hidden="true"></i>FireBot ESP32</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+      </ul>
+    </nav>
+    <button class="theme" id="theme" type="button" aria-label="Switch light or dark theme">Theme</button>
+  </div>
+</header>
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>A robot car that finds fire before it spreads.</h1>
+      <p class="lead">A two-ESP32 robot car you drive from a handheld remote. It detects flames, stops for obstacles, warns you with LEDs and a buzzer, runs a small water pump, and reports its status to an online dashboard.</p>
+      <div class="actions">
+        <a class="btn primary" href="about.html">Read the project</a>
+        <a class="btn" href="contact.html">Get in touch</a>
+      </div>
+    </div>
+    <div class="stage">
+      <svg viewBox="0 0 520 320" role="img" aria-label="Illustration of the robot car sensing a flame ahead">
+        <rect x="0" y="262" width="520" height="6" rx="3" fill="var(--line)"/>
+        <g class="pulse"><circle cx="150" cy="150" r="120" fill="none" stroke="var(--teal)" stroke-width="3"/></g>
+        <g class="pulse b"><circle cx="150" cy="150" r="120" fill="none" stroke="var(--teal)" stroke-width="3"/></g>
+        <rect x="70" y="170" width="160" height="62" rx="14" fill="var(--ink)"/>
+        <rect x="95" y="146" width="90" height="30" rx="8" fill="var(--teal)"/>
+        <circle cx="112" cy="161" r="6" fill="var(--amber)"/><circle cx="168" cy="161" r="6" fill="var(--amber)"/>
+        <circle cx="100" cy="246" r="20" fill="var(--ink)" stroke="var(--bg)" stroke-width="5"/>
+        <circle cx="200" cy="246" r="20" fill="var(--ink)" stroke="var(--bg)" stroke-width="5"/>
+        <rect x="228" y="198" width="38" height="8" rx="4" fill="var(--teal)"/>
+        <path d="M268 202 H395" stroke="var(--teal)" stroke-width="3" stroke-dasharray="3 9" stroke-linecap="round"/>
+        <g class="flicker">
+          <path d="M430 262 C395 262 388 228 410 205 C412 222 424 224 428 214 C420 190 438 172 452 160 C452 185 478 200 474 232 C472 252 456 262 430 262Z" fill="var(--flame)"/>
+          <path d="M432 262 C416 262 412 244 424 232 C427 242 436 242 440 232 C452 242 452 262 432 262Z" fill="var(--amber)"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>What the robot does</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c1 4 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-5 1-9z"/></svg></div>
+        <h3>Flame detection</h3>
+        <p>A flame sensor detects visible flames. Red, green and yellow LEDs and a buzzer show normal, fire and obstacle conditions.</p>
+      </article>
+      <article class="card">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M5 12a7 7 0 0 1 14 0M2 12a10 10 0 0 1 20 0"/></svg></div>
+        <h3>Remote control</h3>
+        <p>A handheld ESP32 with five buttons (Forward, Backward, Left, Right, Stop) drives the robot over ESP-NOW. No router or internet needed.</p>
+      </article>
+      <article class="card">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg></div>
+        <h3>Obstacle stop</h3>
+        <p>An ultrasonic sensor measures distance and stops the robot before a collision. This overrides movement commands.</p>
+      </article>
+      <article class="card">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12a10 10 0 0 1 14 0M8.5 15.5a5 5 0 0 1 7 0"/><circle cx="12" cy="19" r="1"/></svg></div>
+        <h3>IoT monitoring</h3>
+        <p>Flame status, distance, alarm, pump and robot status appear on an Adafruit IO dashboard when Wi-Fi is available.</p>
+      </article>
+      <article class="card">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg></div>
+        <h3>Water pump</h3>
+        <p>A small pump, switched by a protected driver circuit, demonstrates water delivery in a controlled test.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <p>The handheld ESP32 sends commands. The robot ESP32 reads the sensors, drives the motors and pump, and sends status online.</p>
+    <ol class="flow">
+      <li>The operator presses a button on the handheld remote.</li>
+      <li>ESP-NOW carries the command to the robot, which drives the motors.</li>
+      <li>Sensors check for flames and obstacles. The robot stops for obstacles and sounds an alert for fire.</li>
+      <li>Status is sent to Adafruit IO over Wi-Fi when online.</li>
+    </ol>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <div>
+      <h3>IoT Fire-Detection and Firefighting Robot Car</h3>
+      <p>An ESP32-based robot for remote control, flame detection, obstacle stop, and IoT monitoring.</p>
+    </div>
+    <div>
+      <h3>Pages</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Project</h3>
+      <ul><li>Prepared by Prince Tuyishime</li><li>23 October 2026</li></ul>
+    </div>
+    <p class="copy">© 2026 Prince Tuyishime. All rights reserved.</p>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
