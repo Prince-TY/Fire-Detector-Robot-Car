@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact us – Fire-Detection Robot Car</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,500..800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><i aria-hidden="true"></i>FireBot ESP32</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="contact.html" aria-current="page">Contact us</a></li>
+      </ul>
+    </nav>
+    <button class="theme" id="theme" type="button" aria-label="Switch light or dark theme">Theme</button>
+  </div>
+</header>
+<main>
+<section class="page-title">
+  <div class="wrap">
+    <h1>Contact us</h1>
+    <p class="lead">Questions about the robot, or want to see a demo? Send a message.</p>
+  </div>
+</section>
+
+<section style="padding-top:1rem">
+  <div class="wrap two">
+    <form id="form">
+      <label>Your name <input name="name" required autocomplete="name"></label>
+      <label>Your email <input name="email" type="email" required autocomplete="email"></label>
+      <label>Message <textarea name="message" required></textarea></label>
+      <button class="btn primary" type="submit">Send message</button>
+      <p id="sent" role="status"></p>
+    </form>
+    <div>
+      <h2>Project lead</h2>
+      <p><strong>Prince Tuyishime</strong><br>IoT, embedded systems and robotics</p>
+      <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+      <p class="note">Sending the form opens your email app with the message ready to send.</p>
+    </div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <div>
+      <h3>IoT Fire-Detection and Firefighting Robot Car</h3>
+      <p>An ESP32-based robot for remote control, flame detection, obstacle stop, and IoT monitoring.</p>
+    </div>
+    <div>
+      <h3>Pages</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Project</h3>
+      <ul><li>Prepared by Prince Tuyishime</li><li>23 October 2026</li></ul>
+    </div>
+    <p class="copy">© 2026 Prince Tuyishime. All rights reserved.</p>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
